@@ -34,7 +34,7 @@ def parse_request():
 
 @app.route('/login', methods=['GET', 'POST'])
 def index():
-    cluster = MongoClient("mongodb+srv://SasukeUchiha:1teasollu@cluster0.vtd40.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    cluster = MongoClient("")
     requestData = json.loads(request.data)
     print(requestData)
     db = cluster["meraki"]
@@ -46,7 +46,7 @@ def index():
 
 @app.route('/register',methods=['GET','POST'])
 def register():
-    cluster = MongoClient("mongodb+srv://SasukeUchiha:1teasollu@cluster0.vtd40.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    cluster = MongoClient("")
     db = cluster["meraki"]
     collection = db["login"]
     requestData = json.loads(request.data)
